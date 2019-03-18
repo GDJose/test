@@ -1,0 +1,79 @@
+int redLED = 3;
+int greenLED = 5;
+int blueLED = 6;
+
+int wait = 250;
+
+void setup()
+{
+  pinMode(redLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+  pinMode(blueLED, OUTPUT);
+}
+
+void loop()
+{
+  for(int i=0; i<155; i++)    //red
+  {
+    analogWrite(redLED,i);
+    analogWrite(greenLED,0);
+    analogWrite(blueLED,0);
+    delay(wait);
+  }
+  delay(wait*5);
+    for(int i=0; i<255; i++)  //purple
+  {
+    analogWrite(redLED,255);
+    analogWrite(greenLED,0);
+    analogWrite(blueLED,i);
+    delay(wait);
+  }
+  delay(wait*5);
+    for(int i=0; i<255; i++)  //blue
+  {
+    analogWrite(redLED,255-i);
+    analogWrite(greenLED,0);
+    analogWrite(blueLED,255);
+    delay(wait);
+  }
+  delay(wait*5);
+    for(int i=0; i<255; i++)  //cyan
+  {
+    analogWrite(redLED,0);
+    analogWrite(greenLED,i);
+    analogWrite(blueLED,255);
+    delay(wait);
+  }
+  delay(wait*5);
+    for(int i=0; i<255; i++)  //green
+  {
+    analogWrite(redLED,0);
+    analogWrite(greenLED,255);
+    analogWrite(blueLED,255-i);
+    delay(wait);
+  }
+  delay(wait*5);
+    for(int i=0; i<255; i++)  //yellow
+  {
+    analogWrite(redLED,i);
+    analogWrite(greenLED,255);
+    analogWrite(blueLED,0);
+    delay(wait);
+  }
+  delay(wait*5);
+    for(int i=0; i<255; i++)
+  {
+    analogWrite(redLED,255);
+    analogWrite(greenLED,255);
+    analogWrite(blueLED,i);
+    delay(wait);
+  }
+  delay(wait*5);
+  for(int i=0; i<255; i++)
+  {
+    analogWrite(redLED,355-i);
+    analogWrite(greenLED,255-i);
+    analogWrite(blueLED,255-i);
+    delay(wait);
+  }
+}
